@@ -89,7 +89,7 @@ function SubstituteVisualSelectionDrop()
     -- Move the cursor to the replacement field
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left><Left><Left>', true, false, true), 'n', false)
 end
-vim.api.nvim_set_keymap('v', '<Leader>S', ':lua SubstituteVisualSelectionDrop()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>sd', ':lua SubstituteVisualSelectionDrop()<CR>', { noremap = true, silent = true })
 
 -- Start search and replace for visually selected text
 function SubstituteVisualSelectionKeep()
@@ -103,7 +103,7 @@ function SubstituteVisualSelectionKeep()
     -- Move the cursor to the replacement field
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left><Left><Left>', true, false, true), 'n', false)
 end
-vim.api.nvim_set_keymap('v', '<Leader>s', ':lua SubstituteVisualSelectionKeep()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>s', ':lua SubstituteVisualSelectionKeep()<CR>', { noremap = true, silent = true })
 
 -- Make the current file executable with space + x in normal mode
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
