@@ -78,7 +78,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
 
 -- Start search and replace for visually selected text
-function SubstituteVisualSelection()
+function SubstituteVisualSelectionDrop()
     -- Yank the visually selected text into the search register
     vim.cmd('normal! gv"xy')
 
@@ -89,7 +89,21 @@ function SubstituteVisualSelection()
     -- Move the cursor to the replacement field
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left><Left><Left>', true, false, true), 'n', false)
 end
-vim.api.nvim_set_keymap('v', '<Leader>s', ':lua SubstituteVisualSelection()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Leader>S', ':lua SubstituteVisualSelectionDrop()<CR>', { noremap = true, silent = true })
+
+-- Start search and replace for visually selected text
+function SubstituteVisualSelectionKeep()
+    -- Yank the visually selected text into the search register
+    vim.cmd('normal! gv"xy')
+
+    -- Substitute command with the placeholder for the replacement text
+    local cmd = ':%s/' .. vim.fn.escape(vim.fn.getreg('x'), '/') .. '/' .. vim.fn.escape(vim.fn.getreg('x'), '/') .. '/gc'
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), 'n', false)
+
+    -- Move the cursor to the replacement field
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Left><Left><Left>', true, false, true), 'n', false)
+end
+vim.api.nvim_set_keymap('v', '<Leader>s', ':lua SubstituteVisualSelectionKeep()<CR>', { noremap = true, silent = true })
 
 -- Make the current file executable with space + x in normal mode
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
