@@ -10,7 +10,6 @@ require("mason-null-ls").setup({
 		'mypy', -- static type checker
 		'ruff', -- linting
 		'black', -- formatting
-		'debugpy' --debugging
 	},
 	automatic_installation = false,
 	handlers = {},
