@@ -30,6 +30,13 @@ require'nvim-treesitter.configs'.setup {
               ["af"] = "@function.outer",
               ["if"] = "@function.inner",
               -- Add more keymaps as needed
+              ["il"] = "@loop.inner",
+              ["al"] = "@loop.outer",
+              ["ic"] = "@conditional.inner",
+              ["ac"] = "@conditional.outer",
+              ["ib"] = "@block.inner",
+              ["ab"] = "@block.outer",
+
           },
       },
       swap = {
