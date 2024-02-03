@@ -85,8 +85,6 @@ local plugins = {
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-    -- git integration
-    {'tpope/vim-fugitive'},
     -- powerline
     {
         'nvim-lualine/lualine.nvim',
