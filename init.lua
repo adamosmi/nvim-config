@@ -21,13 +21,7 @@ local plugins = {
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim'}
     },
-    -- color schemes
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
+    -- color schemes,
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     -- treesitter
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
