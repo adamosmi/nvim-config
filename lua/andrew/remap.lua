@@ -121,3 +121,7 @@ end)
 
 -- Go to the next usage of word
 vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+
+-- Yank current filepath
+vim.api.nvim_set_keymap('n', '<leader>yp', '<cmd>let @+=expand("%:p")<CR>', {noremap = true, silent = true})
+
