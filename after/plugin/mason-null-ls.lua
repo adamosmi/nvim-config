@@ -7,9 +7,7 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		-- Opt to list sources here, when available in mason.
 		-- python
-		'mypy', -- static type checker
 		'ruff', -- linting
-		'black', -- formatting
 	},
 	automatic_installation = false,
 	handlers = {},
@@ -17,9 +15,7 @@ require("mason-null-ls").setup({
 require("null-ls").setup({
 	sources = {
 		-- Anything not supported by mason.
-		require("null-ls").builtins.diagnostics.mypy,
 		require("null-ls").builtins.diagnostics.ruff,
-		require("null-ls").builtins.formatting.black,
 	},
 	-- auto-formatting
 	on_attach = function(client, bufnr)
