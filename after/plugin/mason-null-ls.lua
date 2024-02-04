@@ -7,7 +7,9 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		-- Opt to list sources here, when available in mason.
 		-- python
-		'ruff', -- linting
+        -- 'mypy',
+        -- 'black',
+		'ruff',
 	},
 	automatic_installation = false,
 	handlers = {},
