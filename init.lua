@@ -82,7 +82,12 @@ local plugins = {
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     -- send commands
-    {'jpalardy/vim-slime'},
+    {
+        "jpalardy/vim-slime",
+        init = function()
+            vim.g.slime_no_mappings = 1 -- add custom keybindings
+        end
+    },
     -- sql
     {
         'kristijanhusak/vim-dadbod-ui',
