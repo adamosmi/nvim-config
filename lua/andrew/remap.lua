@@ -71,3 +71,12 @@ vim.api.nvim_set_keymap('v', '<leader>s', ':lua SubstituteVisualSelectionKeep()<
 -- Yank current filepath
 vim.api.nvim_set_keymap('n', '<leader>yp', '<cmd>let @+=expand("%:p")<CR>', {noremap = true, silent = true})
 
+-- Add current date in %Y_%m_%d format
+vim.keymap.set("n", "<leader>t", [[<cmd>exe "normal i" . strftime('%Y_%m_%d')<CR>]]) 
+
+-- Toggle spell checking
+vim.keymap.set('n', '<leader>c', function() vim.opt.spell = not vim.opt.spell:get() end, {noremap = true, silent = true, desc = "Toggle spell checking"})
+-- ]s to next misspelled word
+-- [s to previous misspelled word
+-- zg adds word under cursor to dictionary
+
