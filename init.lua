@@ -49,6 +49,8 @@ local plugins = {
             "nvimtools/none-ls.nvim",
         }
     },
+    -- java specific lsp config
+    {'mfussenegger/nvim-jdtls'},
     -- code commenting
     {'numToStr/Comment.nvim'},
     -- tmux integration

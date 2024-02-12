@@ -12,6 +12,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'lua_ls', -- lua
         'pyright', -- python
+        'jdtls', -- java
     },
     handlers = {
         lsp_zero.default_setup,
@@ -54,3 +55,6 @@ require('lspconfig').pyright.setup({
         }
     }
 })
+
+-- java
+require('lspconfig').jdtls.setup({})
