@@ -13,6 +13,7 @@ require('mason-lspconfig').setup({
         'lua_ls', -- lua
         'pyright', -- python
         'jdtls', -- java
+        'bashls'
     },
     handlers = {
         lsp_zero.default_setup,
@@ -58,3 +59,6 @@ require('lspconfig').pyright.setup({
 
 -- java
 require('lspconfig').jdtls.setup({})
+
+-- bash
+require('lspconfig').bashls.setup({})
