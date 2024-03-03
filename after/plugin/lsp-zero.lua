@@ -13,7 +13,9 @@ require('mason-lspconfig').setup({
         'lua_ls', -- lua
         'pyright', -- python
         'jdtls', -- java
-        'bashls'
+        'bashls', -- bash
+        'html', -- html
+        'tsserver', -- javascript, typescript
     },
     handlers = {
         lsp_zero.default_setup,
@@ -62,3 +64,11 @@ require('lspconfig').jdtls.setup({})
 
 -- bash
 require('lspconfig').bashls.setup({})
+
+-- html
+require('lspconfig').html.setup({})
+
+-- javascript/typescript
+require('lspconfig').tsserver.setup({})
+
+
