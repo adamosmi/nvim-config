@@ -16,6 +16,7 @@ require('mason-lspconfig').setup({
         'bashls', -- bash
         'html', -- html
         'tsserver', -- javascript, typescript
+        'clangd', -- c
     },
     handlers = {
         lsp_zero.default_setup,
@@ -70,5 +71,8 @@ require('lspconfig').html.setup({})
 
 -- javascript/typescript
 require('lspconfig').tsserver.setup({})
+
+-- c
+require('lspconfig').clangd.setup({})
 
 
