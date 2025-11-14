@@ -141,8 +141,8 @@ require("lazy").setup({
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
+        -- "hrsh7th/cmp-buffer",
+        -- "hrsh7th/cmp-path",
         "onsails/lspkind.nvim",
       },
       config = function()
@@ -185,8 +185,8 @@ require("lazy").setup({
           sources = cmp.config.sources({
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = "buffer" },
-            { name = "path" },
+            -- { name = "buffer" },
+            -- { name = "path" },
           }),
           formatting = {
             format = lspkind.cmp_format({
