@@ -20,6 +20,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.undofile = true -- Enable persistent undo
 
 -- Disable optional providers you don't use (cleans up :checkhealth)
 vim.g.loaded_perl_provider = 0
@@ -216,6 +217,12 @@ require("lazy").setup({
       opts = {},
     },
 
+    -- Undo Tree
+    -- FIX: Removed config = true. This plugin does not need a Lua setup function.
+    {
+      "mbbill/undotree",
+    },
+
     -- Fuzzy Finder
     {
       "nvim-telescope/telescope.nvim",
@@ -237,6 +244,9 @@ local keymap = vim.keymap.set
 
 -- NvimTree (File Explorer)
 keymap("n", "<leader>pv", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+-- Undotree
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
 
 -- Telescope (Fuzzy Finder)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
