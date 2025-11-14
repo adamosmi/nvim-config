@@ -52,6 +52,7 @@ require("lazy").setup({
           ensure_installed = {
             "python", "javascript", "css", "html", "lua",
             "vim", "dockerfile", "yaml", "jinja",
+            "bash", "markdown", "markdown_inline",
           },
           highlight = { enable = true },
         })
@@ -82,6 +83,8 @@ require("lazy").setup({
             "yamlls",
             "jinja_lsp",
             "emmet_language_server",
+            "bashls", -- Bash LSP
+            "marksman", -- Markdown LSP
         },
         -- The 'handlers' mechanism is removed in v2+.
       }
@@ -121,6 +124,8 @@ require("lazy").setup({
             "cssls",
             "dockerls",
             "yamlls",
+            "bashls",
+            "marksman",
         }
 
         for _, server in ipairs(standard_servers) do
@@ -231,6 +236,7 @@ require("lazy").setup({
         require("telescope").setup({})
       end,
     },
+
   },
   -- lazy.nvim options
   checker = { enabled = true },
